@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8017:8017"
+    environment:
+      DEBUG: "true"
+      JWT_SECRET: docker-dev-secret-key-cakephp-101
+      SECURITY_SALT: docker-dev-salt-cakephp-101-not-for-production
+      APP_HOST: 0.0.0.0
+      PORT: "8017"
