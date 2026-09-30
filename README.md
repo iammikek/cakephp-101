@@ -1,10 +1,10 @@
 # Getting Fast at CakePHP
 
-A step-by-step **[CakePHP 5](https://book.cakephp.org/5/en/index.html)** port of the *-101 items/categories API. Same JSON contract as [slim-101](https://github.com/iammikek/slim-101) and [laravel-101](https://github.com/iammikek/laravel-101), **API-only** (no `/shop` UI).
+A step-by-step **[CakePHP 5](https://book.cakephp.org/5/en/index.html)** port of [fastAPI-101](https://github.com/iammikek/fastAPI-101): the same items/categories JSON API, JWT auth, pagination, filters, and stats. **API-only** (no `/shop` UI).
 
-**Audience:** Laravel developers comparing a convention-heavy PHP framework: CakePHP tables and entities stand in for Eloquent, migrations for `artisan migrate`, and middleware for the HTTP kernel.
+**Audience:** Laravel developers learning CakePHP against the family base project. Tables and entities stand in for SQLAlchemy models, migrations for Alembic, and middleware for FastAPI dependencies.
 
-**API-only by design:** Laravel, Symfony, and Framework X include a server-rendered `/shop`. This repo keeps the JSON API so you can compare CakePHP with slim-101 without a second UI. Pair it with [react-101](https://github.com/iammikek/react-101), [vue-101](https://github.com/iammikek/vue-101), or curl.
+**API-only by design:** fastAPI-101 is the JSON API with no shop. Laravel, Symfony, and Framework X add a server-rendered `/shop` on top of that contract. This repo follows the FastAPI shape and stays API-only. Pair it with [react-101](https://github.com/iammikek/react-101), [vue-101](https://github.com/iammikek/vue-101), or curl.
 
 ---
 
@@ -142,14 +142,16 @@ Copy `config/app_local.example.php` to `config/app_local.php` before the first r
 
 ## Framework maps
 
-| Laravel / Slim | CakePHP 5 (this repo) |
-|----------------|------------------------|
-| `routes/api.php` | `config/routes.php` |
-| Eloquent model | `Table` + entity |
-| `artisan migrate` | `bin/cake migrations migrate` |
-| `auth:api` middleware | `JwtAuthMiddleware` |
-| FormRequest rules | `App\Utility\Validator` |
-| Catalog Shop `/shop` | Omitted (API-only) |
+| fastAPI-101 | CakePHP 5 (this repo) |
+|-------------|------------------------|
+| `main.py` routes | `config/routes.php` |
+| SQLAlchemy model | `Table` + entity |
+| Pydantic schemas | `App\Utility\Validator` |
+| `Depends` auth | `JwtAuthMiddleware` |
+| Service functions | Table methods |
+| Alembic | `bin/cake migrations migrate` |
+| pytest `TestClient` | PHPUnit integration tests |
+| No `/shop` | Omitted (API-only) |
 
 ---
 
