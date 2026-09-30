@@ -148,7 +148,7 @@ Copy `config/app_local.example.php` to `config/app_local.php` before the first r
 | Eloquent model | `Table` + entity |
 | `artisan migrate` | `bin/cake migrations migrate` |
 | `auth` middleware | `JwtAuthMiddleware` |
-| `Validator::make()` | `App\Utility\Validator` |
+| Form Request classes | `App\Utility\Validator` |
 | Service class | Table methods |
 | PHPUnit feature tests | PHPUnit integration tests |
 | Catalog Shop `/shop` | Omitted (API-only) |
