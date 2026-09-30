@@ -1,10 +1,10 @@
 # Getting Fast at CakePHP
 
-A step-by-step **[CakePHP 5](https://book.cakephp.org/5/en/index.html)** port of [fastAPI-101](https://github.com/iammikek/fastAPI-101): the same items/categories JSON API, JWT auth, pagination, filters, and stats. **API-only** (no `/shop` UI).
+A step-by-step **[CakePHP 5](https://book.cakephp.org/5/en/index.html)** port of [laravel-101](https://github.com/iammikek/laravel-101) for Laravel developers learning CakePHP. Same items/categories JSON API, JWT auth, pagination, filters, and stats. **API-only** (no `/shop` UI).
 
-**Audience:** Laravel developers learning CakePHP against the family base project. Tables and entities stand in for SQLAlchemy models, migrations for Alembic, and middleware for FastAPI dependencies.
+**Audience:** You already know routes, Eloquent, migrations, middleware, and validation. Tables and entities stand in for Eloquent models, `bin/cake migrations migrate` for `artisan migrate`, and middleware for the HTTP kernel.
 
-**API-only by design:** fastAPI-101 is the JSON API with no shop. Laravel, Symfony, and Framework X add a server-rendered `/shop` on top of that contract. This repo follows the FastAPI shape and stays API-only. Pair it with [react-101](https://github.com/iammikek/react-101), [vue-101](https://github.com/iammikek/vue-101), or curl.
+**API-only by design:** laravel-101 also includes a Blade shop at `/shop`. This repo keeps the JSON API so the CakePHP pieces stay easy to see. Pair it with [react-101](https://github.com/iammikek/react-101), [vue-101](https://github.com/iammikek/vue-101), or curl.
 
 ---
 
@@ -142,16 +142,16 @@ Copy `config/app_local.example.php` to `config/app_local.php` before the first r
 
 ## Framework maps
 
-| fastAPI-101 | CakePHP 5 (this repo) |
-|-------------|------------------------|
-| `main.py` routes | `config/routes.php` |
-| SQLAlchemy model | `Table` + entity |
-| Pydantic schemas | `App\Utility\Validator` |
-| `Depends` auth | `JwtAuthMiddleware` |
-| Service functions | Table methods |
-| Alembic | `bin/cake migrations migrate` |
-| pytest `TestClient` | PHPUnit integration tests |
-| No `/shop` | Omitted (API-only) |
+| Laravel | CakePHP 5 (this repo) |
+|---------|------------------------|
+| `routes/api.php` | `config/routes.php` |
+| Eloquent model | `Table` + entity |
+| `artisan migrate` | `bin/cake migrations migrate` |
+| `auth` middleware | `JwtAuthMiddleware` |
+| `Validator::make()` | `App\Utility\Validator` |
+| Service class | Table methods |
+| PHPUnit feature tests | PHPUnit integration tests |
+| Catalog Shop `/shop` | Omitted (API-only) |
 
 ---
 
